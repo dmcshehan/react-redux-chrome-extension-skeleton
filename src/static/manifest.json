@@ -1,0 +1,31 @@
+{
+	"name": "My App",
+	"version": "1.0.0",
+	"description": "Link categorizing extension",
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": true
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"js": ["content.js"]
+		}
+	],
+	"manifest_version": 2,
+	"permissions": ["tabs"],
+	"browser_action": {
+		"default_icon": {
+			"16": "./images/logo16.png",
+			"32": "./images/logo32.png",
+			"128": "./images/logo128.png"
+		},
+		"default_title": "Fav Links",
+		"default_popup": "popup.html"
+	},
+	"icons": {
+		"16": "./images/logo16.png",
+		"32": "./images/logo32.png",
+		"128": "./images/logo128.png"
+	}
+}
