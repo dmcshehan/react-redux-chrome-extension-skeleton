@@ -9,7 +9,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className={classNames.app}>
-				<p>Wow</p>
+				<p>app</p>
 			</div>
 		);
 	}
@@ -17,7 +17,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		name: 'Shehan',
+		favLinks: state.link.favLinks,
 	};
 };
 

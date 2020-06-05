@@ -10,9 +10,12 @@ const store = new Store({
 
 import App from './components/App/App.js';
 
-render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
-	document.getElementById('root')
-);
+const unsubscribe = store.subscribe(() => {
+	unsubscribe(); // make sure to only fire once
+	render(
+		<Provider store={store}>
+			<App />
+		</Provider>,
+		document.getElementById('root')
+	);
+});
